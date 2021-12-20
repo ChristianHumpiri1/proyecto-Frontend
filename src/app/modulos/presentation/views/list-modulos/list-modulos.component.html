@@ -1,0 +1,73 @@
+
+
+<div class="row justify-content-md-center">
+  <div class="col col-3">
+    <div class="card">
+      <div class="card-header bg-success">
+          <h5 class="card-title" style="color: white;">Registrar Modulo</h5>
+      </div>
+      <div class="card-body">
+          <div class="form-group">
+
+              <input type="text" name="nombre" class="form-control" placeholder="nombres" [(ngModel)]="moduloModel.NO_PERSONA">
+              <br>
+              <input type="text" name="paterno" class="form-control" placeholder="Ap.Paterno" [(ngModel)]="moduloModel.AP_PATERNO">
+              <br>
+              <input type="text" name="materno" class="form-control" placeholder="Ap.Materno"  [(ngModel)]="moduloModel.AP_MATERNO">
+              <br>
+              <input type="text" name="correo" class="form-control" placeholder="Correo"  [(ngModel)]="moduloModel.NO_CORREO">
+              <br>
+              <input type="text" name="fecha" class="form-control" placeholder="Fecha"  [(ngModel)]="moduloModel.FE_INSCRITO">
+              <br>
+              <input type="text" name="modulo" class="form-control" placeholder="Modulo"  [(ngModel)]="moduloModel.NO_MODULO">
+              <br>
+              <input type="text" name="sesion" class="form-control" placeholder="Sesion"  [(ngModel)]="moduloModel.NO_SESION">
+              <br>
+              <input type="text" name="recurso" class="form-control" placeholder="Recurso"  [(ngModel)]="moduloModel.NO_RECURSO">
+              <br>
+          </div>
+          <div class="form-group">
+              <button class="btn btn-success" style="width: 100%;" (click)="save()">Registrar</button>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-8">
+    <table class="table">
+      <thead class="table-light">
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">#</th>
+            <th scope="col">NOMBRE</th>
+            <th scope="col">APELLIDO</th>
+            <th scope="col">APELLIDO</th>
+            <th scope="col">CORREO</th>
+            <th scope="col">FECHA</th>
+            <th scope="col">MODULO</th>
+            <th scope="col">SESION</th>
+            <th scope="col">RECURSO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let lista of filas; let i=index" >
+          <th scope="row">{{i+1}}</th>
+          <td>{{lista.ID_MODULO}}</td>
+          <td>{{lista.NO_PERSONA}}</td>
+          <td>{{lista.AP_PATERNO}}</td>
+          <td>{{lista.AP_MATERNO}}</td>
+          <td>{{lista.NO_CORREO}}</td>
+          <td>{{lista.FE_INSCRITO}}</td>
+          <td>{{lista.NO_MODULO}}</td>
+          <td>{{lista.NO_SESION}}</td>
+          <td>{{lista.NO_RECURSO}}</td>
+
+          <td>
+            <button type="button" class="btn btn-outline-danger" ><i class="fa fa-trash" aria-hidden="true"></i></button >
+            <button type="button" class="btn btn-outline-info" data-toggle='modal' data-target='#modal1'
+             ><i class="fa fa-user-plus" aria-hidden="true"></i></button >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

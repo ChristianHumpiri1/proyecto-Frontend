@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-center h-50" *ngIf="!authService.isAuthenticated()">
+    <div class="" style="margin-top:200px">
+        <h3 class="text-center">ADRA</h3>
+        <form method="post">
+            <div class="p-4">
+                <div class="input-group mb-3">
+                    <span class="input-group-text bg-success text-light"><i class="far fa-user"></i></span>
+                    <input [(ngModel)]="usuario.username" type="text" class="form-control" placeholder="Username"
+                        name="username" autofocus>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text bg-success text-light"><i class="fas fa-key"></i></span>
+                    <input type="password" [(ngModel)]="usuario.password" class="form-control" placeholder="password"
+                        name="password">
+                </div>
+                <div class="row">
+                    <input (click)="login()" type="submit" class="btn btn-success text-center mt-2" value="Ingresar">
+                </div>
+            </div>
+        </form>
+    </div>
